@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Open Sans", Arial, sans-serif;
+      }
+
+      body {
+        display: flex;
+        background: #f5f5f5;
+        padding: 30px;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        width: 230px;
+        background: #4c6d34;
+        padding: 20px;
+        border-radius: 10px;
+        color: white;
+        height: fit-content;
+      }
+
+      .sidebar h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+
+      .sidebar ul {
+        list-style: none;
+      }
+
+      .sidebar ul li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+
+      .sidebar input {
+        margin-right: 8px;
+      }
+
+      /* Main Content */
+      .services-container {
+        flex-grow: 1;
+        margin-left: 30px;
+      }
+
+      .services-container h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .service-card {
+        position: relative;
+        width: 100%;
+        height: 250px;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .service-card img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.7);
+      }
+
+      .service-card .overlay {
+        position: relative;
+        z-index: 2;
+      }
+
+      .service-card button {
+        background: #6e57e0;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-size: 14px;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+
+      .service-card button:hover {
+        background: #5a43c8;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Categories</h3>
+      <ul>
+        <li><input type="checkbox" /> Crops & Seeds</li>
+        <li><input type="checkbox" /> Organic Fertilizers</li>
+        <li><input type="checkbox" /> Farming Tools & Machinery</li>
+        <li><input type="checkbox" /> Expert Consultation</li>
+        <li><input type="checkbox" /> Marketplace</li>
+        <li><input type="checkbox" /> Weather & Crop Alerts</li>
+        <li><input type="checkbox" /> Online Training & Workshops</li>
+      </ul>
+    </aside>
+
+    <!-- Services Section -->
+    <section class="services-container">
+      <h2>Our Services</h2>
+      <div class="services-grid">
+        <!-- Expert Consultation -->
+        <div class="service-card">
+          <img src="expert-consultation.jpg" alt="Expert Consultation" />
+          <div class="overlay">
+            <p>Expert Consultation</p>
+            <button>Talk to an Expert</button>
+          </div>
+        </div>
+
+        <!-- Organic Marketplace -->
+        <div class="service-card">
+          <img src="marketplace.jpg" alt="Organic Marketplace" />
+          <div class="overlay">
+            <p>Organic Marketplace</p>
+            <button>Explore Now</button>
+          </div>
+        </div>
+
+        <!-- Farm Machinery Rental -->
+        <div class="service-card">
+          <img src="farm-machinery.jpg" alt="Farm Machinery Rental" />
+          <div class="overlay">
+            <p>Farm Machinery Rental</p>
+            <button>Rent Equipment</button>
+          </div>
+        </div>
+
+        <!-- AI-Based Farming Suggestions -->
+        <div class="service-card">
+          <img src="ai-farming.jpg" alt="AI-Based Suggestions" />
+          <div class="overlay">
+            <p>AI-Based Farming Suggestions</p>
+            <button>Get AI Advice</button>
+          </div>
+        </div>
+
+        <!-- Farmer Community Forum -->
+        <div class="service-card">
+          <img src="farmer-forum.jpg" alt="Farmer Community" />
+          <div class="overlay">
+            <p>Farmer Community Forum</p>
+            <button>Join Now</button>
+          </div>
+        </div>
+
+        <!-- Organic Certification Assistance -->
+        <div class="service-card">
+          <img src="organic-certification.jpg" alt="Organic Certification" />
+          <div class="overlay">
+            <p>Organic Certification Assistance</p>
+            <button>Get Certified</button>
+          </div>
+        </div>
+
+        <!-- Weather & Crop Alerts -->
+        <div class="service-card">
+          <img src="weather-alerts.jpg" alt="Weather & Crop Alerts" />
+          <div class="overlay">
+            <p>Weather & Crop Alerts</p>
+            <button>Get Alerts</button>
+          </div>
+        </div>
+
+        <!-- Online Training & Workshops -->
+        <div class="service-card">
+          <img src="training-workshops.jpg" alt="Online Training" />
+          <div class="overlay">
+            <p>Online Training & Workshops</p>
+            <button>Learn More</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

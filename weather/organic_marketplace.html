@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: #4c6d34;
+            position: relative;
+          }
+    
+          .logo img {
+            height: 50px;
+          }
+    
+          .nav-links {
+            position: relative;
+            display: flex;
+          }
+    
+          .nav-links a {
+            text-decoration: none;
+            margin: 0 15px;
+            color: #c2a470;
+            position: relative;
+            padding-bottom: 5px;
+          }
+    
+          .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: #c2a470;
+            transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+          }
+    
+          .nav-links a:hover::after {
+            width: 100%;
+            left: 0;
+          }
+    
+          .underline {
+            position: absolute;
+            bottom: 0;
+            height: 2px;
+            background: #c2a470;
+            transition: all 0.3s ease-in-out;
+            width: 0;
+          }
+    
+          .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          }
+    
+          .profile img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+          }
+    
+          .profile p {
+            margin-top: 5px;
+            color: white;
+          }
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Open Sans", Arial, sans-serif;
+          }
+        .hero {
+            text-align: center;
+            padding: 50px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/6/6f/Farmers_market_-_fruit_and_vegetable_stand.jpg') no-repeat center center/cover;
+            color: white;
+        }
+        .hero button {
+            padding: 10px 20px;
+            background-color: #ff9800;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .products {
+            text-align: center;
+            padding: 20px;
+        }
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .product {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .product button {
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        footer {
+            background-color: #1e293b;
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.25rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section ul a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #334155;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        
+            .hero-buttons {
+                justify-content: center;
+            }
+        
+            .hero-stats {
+                justify-content: center;
+            }
+        
+            .hero-image {
+                grid-row: 1;
+            }
+        
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+          <img src="../auth/logo.png" alt="Logo" />
+        </div>
+        <div class="nav-links">
+          <div class="underline"></div>
+          <a href="index.php">Home</a>
+          <a href="ecommerce/marketplace.php">Marketplace</a>
+          <a href="auth/about.html"> About us</a>
+          <a href="auth/contact1.html">Contact</a>
+          <a href="auth/faq.html">FAQ</a>
+          <a href="auth/chat.html">AI Suggestions</a>
+        </div>
+        <div class="profile">
+          <img
+            src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg"
+            alt="Profile Picture"
+          />
+          <a href="auth/login.html">Login</a>
+        </div>
+      </nav>
+    
+    <section class="hero">
+        <h2>100% Organic & Fresh Products</h2>
+        <p>Shop healthy and sustainable food directly from local farmers.</p>
+        <button onclick="shopNow()">Shop Now</button>
+    </section>
+    
+    <section class="products">
+        <h2>Our Products</h2>
+        <div class="product-list">
+            <script>
+                const products = [
+                    { name: "Fresh Apples", price: "$5.99 / kg", image: "https://upload.wikimedia.org/wikipedia/commons/1/15/Red_Apple.jpg" },
+                    { name: "Organic Carrots", price: "$3.49 / kg", image: "https://upload.wikimedia.org/wikipedia/commons/3/32/Carrots_of_many_colors.jpg" },
+                    { name: "Ripe Tomatoes", price: "$4.29 / kg", image: "https://upload.wikimedia.org/wikipedia/commons/8/89/Tomato_je.jpg" },
+                    { name: "Green Cucumbers", price: "$2.99 / kg", image: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Cucumbers.jpg" },
+                    { name: "Organic Bananas", price: "$1.99 / kg", image: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Banana-Single.jpg" },
+                    { name: "Fresh Grapes", price: "$6.49 / kg", image: "https://upload.wikimedia.org/wikipedia/commons/6/69/Grapes_%28black%29.jpg" }
+                ];
+                for (let i = 0; i < 25; i++) {
+                    const product = products[i % products.length];
+                    document.write(`
+                        <div class="product">
+                            <img src="${product.image}" alt="${product.name}">
+                            <h3>${product.name}</h3>
+                            <p>${product.price}</p>
+                            <button>Add to Cart</button>
+                        </div>
+                    `);
+                }
+            </script>
+        </div>
+    </section>
+    <footer style="background-color: #4c6d34; color: white; padding: 20px 0;">
+        <div class="footer-content" style="display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center;">
+            <div class="footer-section">
+                <h3 style="color: #c2a470;">AgriConnect</h3>
+                <p>Connecting Farmers, Buyers, and Experts for a Sustainable Future </p>
+                <div class="social-links">
+                    <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-facebook"></i></a>
+                    <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4 style="color: #c2a470;">Quick Links</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="index.php" style="color: white; text-decoration: none;">Home</a></li>
+                    <li><a href="ecommerce/includes/markeltplace.php" style="color: white; text-decoration: none;">Marketplace</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none;">Blog</a></li>
+                    <li><a href="auth/contact1.html" style="color: white; text-decoration: none;">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 style="color: #c2a470;">Support</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="#" style="color: white; text-decoration: none;">Help Center</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none;">Privacy Policy</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none;">Terms of Service</a></li>
+                    <li><a href="ecommerce/includes/faq.phpttt4" style="color: white; text-decoration: none;">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom" style="text-align: center; padding-top: 10px;">
+            <p>© 2024 AgriConnect. All rights reserved. <br>
+            Developed by Krishi-Mitra </p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,76 @@
+1. John Deere 8R Series Tractor
+   - Features/Specifications: Equipped with a 16-speed PowerShift transmission, advanced GPS-guided AutoTrac system, and a comfortable, climate-controlled cab.  
+   - Price: Approximately $300,000.  
+   - Source: [John Deere Official Website](https://www.deere.com/en/tractors/8r-row-crop-tractors/)  
+
+2. New Holland T7 Heavy Duty Tractor
+   - Features/Specifications: Offers up to 315 horsepower, Auto Command™ Continuously Variable Transmission (CVT), and customizable controls for precision farming.  
+   - Price: Ranges from $250,000 to $350,000.  
+   - Source: [New Holland Agriculture](https://agriculture.newholland.com/en-us/nar/products/tractors-telehandlers/t7-heavy-duty)  
+
+3. Case IH Magnum Series Tractor  
+   - Features/Specifications: Features a 6.7L to 8.7L engine delivering up to 400 horsepower, CVT or PowerDrive transmission options, and AFS Connect™ technology for real-time data monitoring.  
+   - Price: Approximately $280,000.  
+   - Source: [Case IH](https://www.caseih.com/northamerica/en-us/products/tractors/magnum-series)  
+
+4. CLAAS LEXION 8900 Combine Harvester
+   - Features/Specifications: Equipped with a 790 horsepower engine, 18,000-liter grain tank, and advanced threshing and separation systems for high efficiency.  
+   - Price: Around $500,000.  
+   - Source: [CLAAS](https://www.claas-group.com/products/combines/lexion-8900-7400-2020)  
+
+5. Kubota M7 Series Tractor
+   - Features/Specifications: Provides up to 170 horsepower, features a 24-speed powershift transmission, and comes with a spacious cab designed for operator comfort.  
+   - Price: Approximately $150,000.  
+   - Source: [Kubota USA](https://www.kubotausa.com/products/tractors/m7-series)  
+
+6. Massey Ferguson 8700 S Series Tractor
+   - Features/Specifications: Delivers up to 405 horsepower, features Dyna-VT transmission, and includes advanced suspension systems for smooth operation.  
+   - Price: Around $320,000.  
+   - Source: [Massey Ferguson](https://www.masseyferguson.com/en_us/products/tractors/8700-s.html)  
+
+7. Fendt 900 Vario Series Tractor
+   - Features/Specifications: Offers up to 415 horsepower, VarioDrive transmission, and a high-capacity hydraulic system suitable for various implements.  
+   - Price: Approximately $350,000.  
+   - Source: [Fendt](https://www.fendt.com/us/tractors/900-vario)  
+
+8. John Deere S700 Series Combine
+   - Features/Specifications: Features a 13.5L engine with up to 543 horsepower, interactive combine adjustment (ICA2), and a 400-bushel grain tank.  
+   - Price: Around $500,000.  
+   - Source: [John Deere](https://www.deere.com/en/harvesting/s700-combine/)  
+
+9. Case IH Axial-Flow 250 Series Combine
+   - Features/Specifications: Equipped with up to 625 horsepower, AFS Harvest Command™ automation, and a 410-bushel grain tank.  
+   - Price: Approximately $550,000.  
+   - Source: [Case IH](https://www.caseih.com/northamerica/en-us/products/harvesting/axial-flow-combines/250-series)  
+
+10. New Holland CR Revelation Combine
+    - Features/Specifications: Offers up to 700 horsepower, Twin Rotor® technology for efficient threshing, and a 410-bushel grain tank.  
+    - Price: Around $530,000.  
+    - Source: [New Holland Agriculture](https://agriculture.newholland.com/en-us/nar/products/combines/cr-revelation)  
+
+11. CLAAS JAGUAR 990 Forage Harvester 
+    - Features/Specifications: Delivers 925 horsepower, features the SHREDLAGE® corn cracker, and offers dynamic power adjustment for fuel efficiency.  
+    - Price: Approximately $600,000.  
+    - Source: [CLAAS](https://www.claas-group.com/products/forage-harvesters/jaguar-990-930-2020)  
+
+12. Kubota BV Series Round Baler
+    - Features/Specifications: Produces bales up to 5 feet in diameter, features a net wrap system, and has an efficient pickup design for clean baling.  
+    - Price: Around $35,000.  
+    - Source: [Kubota USA](https://www.kubotausa.com/products/hay-tools/balers/bv-series)  
+
+13. Massey Ferguson RB Series Round Baler
+    - Features/Specifications: Offers variable bale sizes up to 5 feet, features a camless pickup for reduced maintenance, and includes a user-friendly control terminal.  
+    - Price: Approximately $40,000.  
+    - Source: [Massey Ferguson](https://www.masseyferguson.com/en_us/products/hay-and-forage/rb-series-round-balers.html)  
+
+14. Fendt Rotana Round Baler
+    - Features/Specifications: Produces bales up to 4.8 feet, features a camless pickup, and includes a film binding system for improved bale quality.  
+    - Price: Around $38,000.  
+    - Source: [Fendt](https://www.fendt.com/us/balers/rotana)  
+
+15. John Deere 560M Round Baler
+    - Features/Specifications: Offers a 6-foot-wide bale chamber, MegaWide™ pickup, and BaleTrak™ Pro monitor for precise bale formation.  
+    - Price: Approximately $45,000.  
+    - Source: [John Deere](https://www.deere.com/en/hay-and-forage/round-balers/560m-round-baler/)  
+
+Now, you can copy and paste without formatting issues! Let me know if you need modifications.

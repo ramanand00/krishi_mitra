@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Open Sans", "Arial", "Helvetica Neue", "Helvetica",
+          sans-serif;
+        color: white;
+      }
+      body {
+        height: 100vh;
+        background: url("login.png") no-repeat center center/cover;
+        display: flex;
+        flex-direction: column;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background: #4c6d34;
+        position: relative;
+      }
+      .logo img {
+        height: 40px;
+      }
+      .nav-links {
+        position: relative;
+        display: flex;
+      }
+      .nav-links a {
+        text-decoration: none;
+        margin: 0 15px;
+        color: #c2a470;
+        position: relative;
+        padding-bottom: 5px;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: #c2a470;
+        transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+      }
+      .nav-links a:hover::after {
+        width: 100%;
+        left: 0;
+      }
+      .underline {
+        position: absolute;
+        bottom: 0;
+        height: 2px;
+        background: #c2a470;
+        transition: all 0.3s ease-in-out;
+        width: 0;
+      }
+      .main-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 40px;
+        width: 80%;
+      }
+      .video-container video {
+        width: 500px;
+        border-radius: 10px;
+      }
+      .text-content {
+        max-width: 500px;
+      }
+      .team {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 50px;
+      }
+      .team-member {
+        background: rgba(0, 0, 0, 0.6);
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        width: 200px;
+      }
+      .team-member img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo.png" alt="Logo" />
+      </div>
+      <div class="nav-links">
+        <div class="underline"></div>
+        <a href="../ecommerce/index.php">Marketplace</a>
+        <a href="about_us.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="register.html">Signup</a>
+        <a href="login.html">Login</a>
+      </div>
+    </nav>
+
+    <section class="main-content">
+      <div class="video-container">
+        <video src="video.mp4" autoplay muted loop></video>
+      </div>
+      <div class="text-content">
+        <h2>About Our Platform</h2>
+        <br /><br />
+        <p style="font-size: 2rem; background-color: #4c6d34; padding: 10px; border-radius: 10px;">
+          We empower farmers by providing a seamless marketplace for organic
+          products and essential agricultural tools.
+        </p>
+        <br />
+        <p style="background-color: #4c6d34; padding: 10px; border-radius: 10px;">
+          Our platform connects farmers with buyers, ensuring high-quality,
+          verified organic products reach the right customers. We aim to
+          revolutionize the agricultural sector by providing digital solutions,
+          market insights, and direct communication channels.
+        </p>
+      </div>
+    </section>
+    <section class="team">
+      <div class="team-member">
+        <img src="team1.png" alt="Member 1" />
+        <h3>John Doe</h3>
+        <p>Founder & CEO</p>
+      </div>
+      <div class="team-member">
+        <img src="team2.png" alt="Member 2" />
+        <h3>Jane Smith</h3>
+        <p>Marketing Head</p>
+      </div>
+      <div class="team-member">
+        <img src="team3.png" alt="Member 3" />
+        <h3>Emily Johnson</h3>
+        <p>Tech Lead</p>
+      </div>
+      <div class="team-member">
+        <img src="team4.png" alt="Member 4" />
+        <h3>Robert Brown</h3>
+        <p>Operations Manager</p>
+      </div>
+    </section>
+  </body>
+  <script>
+    const navLinks = document.querySelectorAll(".nav-links a");
+    const underline = document.querySelector(".underline");
+
+    function moveUnderline(e) {
+      const { left, width } = e.target.getBoundingClientRect();
+      const navLeft = document
+        .querySelector(".nav-links")
+        .getBoundingClientRect().left;
+      underline.style.width = `${width}px`;
+      underline.style.transform = `translateX(${left - navLeft}px)`;
+    }
+
+    navLinks.forEach((link) => {
+      link.addEventListener("mouseover", moveUnderline);
+    });
+
+    document.querySelector(".nav-links").addEventListener("mouseleave", () => {
+      underline.style.width = "0";
+    });
+  </script>
+</html>

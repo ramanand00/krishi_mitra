@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Open Sans", "Arial", "Helvetica Neue", "Helvetica",
+          sans-serif;
+        color: white;
+      }
+
+      body {
+        height: 100vh;
+        background: url("login.png") no-repeat center center/cover;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background: #4c6d34;
+        position: relative;
+      }
+
+      .logo img {
+        height: 40px;
+      }
+
+      .nav-links {
+        position: relative;
+        display: flex;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        margin: 0 15px;
+        color: #c2a470;
+        position: relative;
+        padding-bottom: 5px;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: #c2a470;
+        transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+        left: 0;
+      }
+
+      .underline {
+        position: absolute;
+        bottom: 0;
+        height: 2px;
+        background: #c2a470;
+        transition: all 0.3s ease-in-out;
+        width: 0;
+      }
+
+      .container-wrapper {
+        display: flex;
+        flex-grow: 1;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px;
+      }
+
+      .container {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 30px;
+        border-radius: 25px;
+        text-align: center;
+        width: 300px;
+        margin-right: 10%;
+      }
+
+      .image-container {
+        margin-left: 10%;
+      }
+
+      .image-container img {
+        width: 400px;
+        height: auto;
+      }
+
+      h2 {
+        color: #c2a470;
+      }
+
+      p {
+        margin-bottom: 15px;
+        color: #c2a470;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+      }
+
+      label {
+        color: #c2a470;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: none;
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      button[type="submit"] {
+        width: 100%;
+        background-color: #695522;
+        cursor: pointer;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #8b6f3d;
+      }
+
+      input:focus,
+      select:focus {
+        outline: none;
+        border: 2px solid #4c6d34;
+        background-color: rgba(76, 109, 52, 0.2);
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: right;
+        margin-top: 10px;
+        /* padding: 10px; */
+      }
+      .footer-links .back-link {
+        color: #c2a470;
+        text-decoration: none;
+      }
+
+      .footer-links .back-link:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .container-wrapper {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .container,
+        .image-container {
+          width: 90%;
+          margin: 20px auto;
+        }
+
+        .image-container img {
+          width: 100%;
+        }
+
+        .footer-links {
+          display: flex;
+          align-items: right;
+        }
+      }
+    </style>
+    <script>
+      function validateForm() {
+        let name = document.forms["registerForm"]["name"].value;
+        let email = document.forms["registerForm"]["email"].value;
+        let password = document.forms["registerForm"]["password"].value;
+        let phone = document.forms["registerForm"]["phone"].value;
+        let address = document.forms["registerForm"]["address"].value;
+
+        // Name validation
+        if (name.length < 3) {
+          alert("Name must be at least 3 characters long!");
+          return false;
+        }
+
+        // Email validation (basic format check)
+        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          alert("Please enter a valid email address!");
+          return false;
+        }
+
+        // Password validation (minimum 6 characters)
+        if (password.length < 6) {
+          alert("Password must be at least 6 characters long!");
+          return false;
+        }
+
+        // Phone validation (only numbers, 10 digits)
+        let phonePattern = /^[0-9]{10}$/;
+        if (!phonePattern.test(phone)) {
+          alert("Please enter a valid 10-digit phone number!");
+          return false;
+        }
+
+        // Address validation
+        if (address.length < 5) {
+          alert("Address must be at least 5 characters long!");
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo.png" alt="Logo" />
+      </div>
+      <div class="nav-links">
+        <div class="underline"></div>
+        <a href="index.html">Home</a>
+        <a href="../ecommerce/marketplace.php">Marketplace</a>
+        <a href="about_us.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="register.html">Signup</a>
+        <a href="login.html">Login</a>
+      </div>
+    </nav>
+    <div class="container-wrapper">
+      <div class="image-container">
+        <img src="logo.png" alt="Register Illustration" />
+      </div>
+      <div class="container">
+        <h2>Register</h2>
+        <form
+          name="registerForm"
+          action="register.php"
+          method="POST"
+          onsubmit="return validateForm()"
+        >
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="text" name="phone" id="phone" required />
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="text" name="address" id="address" required />
+          </div>
+
+          <div class="form-group">
+            <label for="user_type">User Type:</label>
+            <select name="user_type" id="user_type">
+              <option value="farmer">Farmer</option>
+              <option value="consumer">Consumer</option>
+              <option value="admin">Admin</option></select
+            ><br />
+          </div>
+
+          <button type="submit" name="register">Register</button>
+        </form>
+        <br />
+        <p>
+          Already have an account?
+          <a href="login.html" style="color: #c2a470">Login here</a>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      const navLinks = document.querySelectorAll(".nav-links a");
+      const underline = document.querySelector(".underline");
+
+      function moveUnderline(e) {
+        const { left, width } = e.target.getBoundingClientRect();
+        const navLeft = document
+          .querySelector(".nav-links")
+          .getBoundingClientRect().left;
+        underline.style.width = `${width}px`;
+        underline.style.transform = `translateX(${left - navLeft}px)`;
+      }
+
+      navLinks.forEach((link) => {
+        link.addEventListener("mouseover", moveUnderline);
+      });
+
+      document
+        .querySelector(".nav-links")
+        .addEventListener("mouseleave", () => {
+          underline.style.width = "0";
+        });
+    </script>
+  </body>
+</html>

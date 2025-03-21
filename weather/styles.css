@@ -1,0 +1,198 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #4c6d34;
+    position: relative;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+
+  .nav-links {
+    position: relative;
+    display: flex;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    margin: 0 15px;
+    color: #c2a470;
+    position: relative;
+    padding-bottom: 5px;
+  }
+
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #c2a470;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+  }
+
+  .underline {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background: #c2a470;
+    transition: all 0.3s ease-in-out;
+    width: 0;
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .profile p {
+    margin-top: 5px;
+    color: white;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", Arial, sans-serif;
+  }
+.hero {
+    text-align: center;
+    padding: 50px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/6/6f/Farmers_market_-_fruit_and_vegetable_stand.jpg') no-repeat center center/cover;
+    color: white;
+}
+.hero button {
+    padding: 10px 20px;
+    background-color: #ff9800;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+.products {
+    text-align: center;
+    padding: 20px;
+}
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.product {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.product img {
+    width: 100%;
+    border-radius: 10px;
+}
+.product button {
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+    margin-top: 10px;
+}
+footer {
+    background-color: #1e293b;
+    color: white;
+    padding: 4rem 2rem 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.25rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul a {
+    color: #94a3b8;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid #334155;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-image {
+        grid-row: 1;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+}

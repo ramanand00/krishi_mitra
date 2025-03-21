@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced AI Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url("login.png") no-repeat center center/cover;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: #4c6d34;
+            position: relative;
+          }
+    
+          .logo img {
+            height: 50px;
+          }
+    
+          .nav-links {
+            position: relative;
+            display: flex;
+          }
+    
+          .nav-links a {
+            text-decoration: none;
+            margin: 0 15px;
+            color: #c2a470;
+            position: relative;
+            padding-bottom: 5px;
+          }
+    
+          .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: #c2a470;
+            transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+          }
+    
+          .nav-links a:hover::after {
+            width: 100%;
+            left: 0;
+          }
+    
+          .underline {
+            position: absolute;
+            bottom: 0;
+            height: 2px;
+            background: #c2a470;
+            transition: all 0.3s ease-in-out;
+            width: 0;
+          }
+    
+          .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          }
+    
+          .profile img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+          }
+    
+          .profile p {
+            margin-top: 5px;
+            color: white;
+          }
+        .chat-container {
+            width: 450px;
+            height: 600px;
+            margin-top: 20px;
+            margin-left: 500px;
+            background: transparent;
+            
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .chat-header {
+            background: #4c6d34;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f2f2f2;
+        }
+        .chat-messages p {
+            margin: 10px 0;
+            padding: 12px 15px;
+            border-radius: 8px;
+            max-width: 75%;
+            word-wrap: break-word;
+        }
+        .bot-message {
+            background: #e3e3e3;
+            align-self: flex-start;
+        }
+        .user-message {
+            background: #4c6d34;
+            color: white;
+            align-self: flex-end;
+        }
+        .chat-input {
+            display: flex;
+            border-top: 1px solid #ccc;
+            background: white;
+            padding: 10px;
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            margin-right: 10px;
+        }
+        .chat-input button {
+            background: #4c6d34;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .chat-input button:hover {
+            background:#4c6d34;
+        }
+        
+footer {
+    background-color: #1e293b;
+    color: white;
+    padding: 4rem 2rem 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.25rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul a {
+    color: #94a3b8;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid #334155;
+}
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="logo">
+        <img src="logo.png" alt="Logo" />
+        </div>
+        <div class="nav-links">
+            <div class="underline"></div>
+            <a href="index.html">Home</a>
+            <!-- <a href="#">Organic Products</a> -->
+            <a href="ecommerce/index.php">Marketplace</a>
+            <!-- <a href="#">Buy Machinery</a> -->
+            <!-- <a href="#">Chat</a> -->
+            <a href="about_us.html"> About us</a>
+            <a href="contact1.html">Contact</a>
+            <a href="#">FAQ</a>
+            <!--<a href="#">Blog</a>-->
+            <!-- <a href="#">Videos</a> -->
+            <a href="#">AI Suggestions</a>
+            <!-- <a href="#">Notifications</a> -->
+            <!-- <a href="#">Expert Calls</a> -->
+        </div>
+        <div class="profile">
+            <img
+            src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg"
+            alt="Profile Picture"
+          />
+          <a href="auth/login.html">Login</a>
+        </div>
+      </nav>
+
+      <div class="chat-container">
+        <div class="chat-header">
+            Advanced AI Chatbot
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Type your message here...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+      
+    <script>
+        const chatMessages = document.getElementById('chatMessages');
+        const userInput = document.getElementById('userInput');
+    
+        async function sendMessage() {
+            const message = userInput.value.trim();
+            if (message === '') return;
+    
+            // Display user's message
+            addMessage(message, 'user-message');
+    
+            // Generate bot response
+            const botReply = generateBotReply(message);
+            if (botReply) {
+                setTimeout(() => addMessage(botReply, 'bot-message'), 500);
+            } else {
+                // Fallback to ChatGPT
+                const chatGptResponse = await fetchChatGptResponse(message);
+                setTimeout(() => addMessage(chatGptResponse, 'bot-message'), 500);
+            }
+    
+            userInput.value = '';
+        }
+    
+        function addMessage(message, className) {
+            const messageElement = document.createElement('p');
+            messageElement.textContent = message;
+            messageElement.classList.add(className);
+            chatMessages.appendChild(messageElement);
+            chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to the latest message
+        }
+    
+        // Predefined responses for common queries
+        function generateBotReply(message) {
+            const lowercaseMessage = message.toLowerCase();
+            
+            if (lowercaseMessage.includes('hello') || lowercaseMessage.includes('hi')) {
+                return 'Hello! How can I assist you today?';
+            } else if (lowercaseMessage.includes('how are you')) {
+                return " I'm doing great, thanks for asking! How about you? ";
+            } else if (lowercaseMessage.includes('time')) {
+                return `The current time is ${new Date().toLocaleTimeString()}.`;
+            } else if (lowercaseMessage.includes('date')) {
+                return `Today is ${new Date().toLocaleDateString()}.`;
+            } else if (lowercaseMessage.includes('weather')) {
+                return 'I am not connected to a weather service right now, but you can check your local weather.';
+            } else if (lowercaseMessage.includes('who are you')) {
+                return "I’m your AI assistant sesigned by Ramanand Mandal, an AI created to help with answering questions, providing information, or just chatting about anything you'd like. How can I assist you today?";
+            } else if (lowercaseMessage.includes('goodbye') || lowercaseMessage.includes('bye')) {
+                return 'Goodbye! Have a great day!';
+            } else if (lowercaseMessage.includes('help')) {
+                return 'Absolutely! Let me know where you need help, and I’ll assist you step-by-step!';
+            }
+    
+            return null; // No predefined response
+        }
+
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    
+        async function fetchChatGptResponse(message) {
+            try {
+                const response = await fetch('https://www.google.co.uk/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message })
+                });
+    
+                const data = await response.json();
+                return data.reply;
+            } catch (error) {
+                console.error('Error fetching response from ChatGPT:', error);
+                return 'Sorry, I am unable to process your request right now.';
+            }
+        }
+    </script>
+    
+</body>
+</html>

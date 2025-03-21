@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nav Bar</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Open Sans", "Arial", "Helvetica Neue", "Helvetica",
+          sans-serif;
+        color: white;
+      }
+
+      /* body {
+        height: 100vh;
+        background: url("login.png") no-repeat center center/cover;
+        display: flex;
+        flex-direction: column;
+      } */
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background: #4c6d34;
+        position: relative;
+      }
+
+      .logo img {
+        height: 50px;
+      }
+
+      .nav-links {
+        position: relative;
+        display: flex;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        margin: 0 15px;
+        color: #c2a470;
+        position: relative;
+        padding-bottom: 5px;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: #c2a470;
+        transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+        left: 0;
+      }
+
+      .underline {
+        position: absolute;
+        bottom: 0;
+        height: 2px;
+        background: #c2a470;
+        transition: all 0.3s ease-in-out;
+        width: 0;
+      }
+
+      .profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .profile img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .profile p {
+        margin-top: 5px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo.png" alt="Logo" />
+      </div>
+      <div class="nav-links">
+        <div class="underline"></div>
+        <a href="#">Home</a>
+        <!-- <a href="#">Organic Products</a> -->
+        <a href="#">Marketplace</a>
+        <!-- <a href="#">Buy Machinery</a> -->
+        <!-- <a href="#">Chat</a> -->
+        <a href="about_us.html"> About us</a>
+        <a href="contact1.html">Contact</a>
+        <a href="#">FAQ</a>
+        <!--<a href="#">Blog</a>-->
+        <!-- <a href="#">Videos</a> -->
+        <a href="#">AI Suggestions</a>
+        <!-- <a href="#">Notifications</a> -->
+        <!-- <a href="#">Expert Calls</a> -->
+      </div>
+      <div class="profile">
+        <img
+          src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg"
+          alt="Profile Picture"
+        />
+        <p>Rupesh</p>
+      </div>
+    </nav>
+
+    <script>
+      const navLinks = document.querySelectorAll(".nav-links a");
+      const underline = document.querySelector(".underline");
+
+      function moveUnderline(e) {
+        const { left, width } = e.target.getBoundingClientRect();
+        const navLeft = document
+          .querySelector(".nav-links")
+          .getBoundingClientRect().left;
+        underline.style.width = `${width}px`;
+        underline.style.transform = `translateX(${left - navLeft}px)`;
+      }
+
+      navLinks.forEach((link) => {
+        link.addEventListener("mouseover", moveUnderline);
+      });
+
+      document
+        .querySelector(".nav-links")
+        .addEventListener("mouseleave", () => {
+          underline.style.width = "0";
+        });
+    </script>
+  </body>
+</html>

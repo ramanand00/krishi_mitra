@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishi Mitra - Weather App</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #4CAF50, #2E7D32);
+            color: white;
+            padding: 20px;
+        }
+        .weather-container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin: auto;
+        }
+        input, select {
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background: #388E3C;
+            color: white;
+            border: none;
+            padding: 12px;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #2E7D32;
+        }
+        .weather-info {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+        .icon {
+            width: 100px;
+            height: 100px;
+        }
+        .chart-container {
+            margin-top: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 450px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🌾 Krishi Mitra - Weather App ☁️</h1>
+    <p>Enter your city name:</p>
+    <input type="text" id="cityInput" placeholder="e.g., Kathmandu">
+    <button onclick="getWeather()">Get Weather</button>
+    
+    <div class="weather-container">
+        <h2>Weather Details</h2>
+        <img id="weather-icon" class="icon" src="" alt="Weather Icon" style="display:none;">
+        <p id="weather-info" class="weather-info">Weather data will appear here.</p>
+    </div>
+    
+    <div class="chart-container">
+        <canvas id="tempChart"></canvas>
+    </div>
+
+    <p>Select Crop:</p>
+    <select id="cropSelect">
+        <option value="wheat">Wheat</option>
+        <option value="rice">Rice</option>
+        <option value="maize">Maize</option>
+        <option value="potato">Potato</option>
+        <option value="barley">Barley</option>
+    </select>
+    <p id="crop-advice">Select a crop to get weather-based advice.</p>
+
+    <script>
+        async function getWeather() {
+            var city = document.getElementById("cityInput").value;
+            var apiKey = "30e2989bf97ba5fd9172fa0853dc6345"; // Your API Key
+            var url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+            
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                if (data.cod === 200) {
+                    document.getElementById("weather-info").innerHTML = `
+                        <strong>Temperature:</strong> ${data.main.temp}°C <br>
+                        <strong>Humidity:</strong> ${data.main.humidity}% <br>
+                        <strong>Weather:</strong> ${data.weather[0].description} <br>
+                        <strong>Wind Speed:</strong> ${data.wind.speed} m/s
+                    `;
+                    
+                    let iconCode = data.weather[0].icon;
+                    document.getElementById("weather-icon").src = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
+                    document.getElementById("weather-icon").style.display = "block";
+                    
+                    updateChart(data.main.temp);
+                } else {
+                    document.getElementById("weather-info").innerText = "City not found. Please try again.";
+                    document.getElementById("weather-icon").style.display = "none";
+                }
+            } catch (error) {
+                document.getElementById("weather-info").innerText = "Error fetching weather data.";
+                document.getElementById("weather-icon").style.display = "none";
+            }
+        }
+
+        let tempChart;
+        function updateChart(temp) {
+            const ctx = document.getElementById('tempChart').getContext('2d');
+            if (tempChart) {
+                tempChart.destroy();
+            }
+            tempChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Temperature'],
+                    datasets: [{
+                        label: 'Current Temperature (°C)',
+                        data: [temp],
+                        backgroundColor: ['#4CAF50']
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        document.getElementById("cropSelect").addEventListener("change", function() {
+            var crop = this.value;
+            var advice = "";
+            if (crop === "wheat") {
+                advice = "🌾 Wheat grows best at 15-25°C with moderate rainfall.";
+            } else if (crop === "rice") {
+                advice = "🌾 Rice requires high humidity, 24-30°C, and frequent rainfall.";
+            } else if (crop === "maize") {
+                advice = "🌽 Maize thrives in 18-27°C with sufficient moisture.";
+            } else if (crop === "potato") {
+                advice = "🥔 Potato grows well in 10-20°C with cool temperatures.";
+            } else if (crop === "barley") {
+                advice = "🌾 Barley is resistant to cold and prefers 12-18°C.";
+            }
+            document.getElementById("crop-advice").innerText = advice;
+        });
+    </script>
+</body>
+</html>

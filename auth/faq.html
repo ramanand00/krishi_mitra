@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>faq</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Open Sans", "Arial", "Helvetica Neue", "Helvetica",
+          sans-serif;
+        color: white;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background: #4c6d34;
+        position: relative;
+      }
+
+      .logo img {
+        height: 50px;
+      }
+
+      .nav-links {
+        position: relative;
+        display: flex;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        margin: 0 15px;
+        color: #c2a470;
+        position: relative;
+        padding-bottom: 5px;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: #c2a470;
+        transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+        left: 0;
+      }
+
+      .underline {
+        position: absolute;
+        bottom: 0;
+        height: 2px;
+        background: #c2a470;
+        transition: all 0.3s ease-in-out;
+        width: 0;
+      }
+
+      .profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .profile img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .profile p {
+        margin-top: 5px;
+        color: white;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Open Sans", Arial, sans-serif;
+      }
+
+      .hero {
+        width: 100%;
+        height: 50vh;
+        background: url("auth/login.png") no-repeat center center/cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 80px; 
+        position: relative;
+        color: white;
+      }
+
+      .hero-content {
+        max-width: 550px;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(0.1px);
+        border-radius: 10px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+        font-weight: bold;
+        color: #c2a470;
+        margin-bottom: 15px;
+      }
+
+      .hero p {
+        font-size: 18px;
+        margin-bottom: 25px;
+        color: white;
+      }
+
+      .btn {
+        padding: 12px 24px;
+        font-size: 16px;
+        background-color: #695522;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      .btn:hover {
+        background-color: #8b6f3d;
+      }
+
+      .search-box {
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 30px;
+        padding: 12px 25px; 
+        position: absolute;
+        right: 100px; 
+        top: 55%;
+        transform: translateY(-50%);
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        width: 500px; 
+      }
+
+      .search-box input {
+        border: none;
+        outline: none;
+        font-size: 16px;
+        background: transparent;
+        padding: 5px;
+        width: 350px; 
+      }
+
+      .search-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+      }
+
+    .services-container {
+        flex-grow: 1;
+        margin-left: 30px;
+      }
+
+      .services-container h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .service-card {
+        position: relative;
+        width: 100%;
+        height: 250px;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .service-card img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.7);
+      }
+
+      .service-card .overlay {
+        position: relative;
+        z-index: 2;
+      }
+
+      .service-card button {
+        background:#695522;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-size: 14px;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+
+      .service-card button:hover {
+        background: #8b6f3d;
+      }
+
+footer {
+    background-color: #1e293b;
+    color: white;
+    padding: 4rem 2rem 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.25rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul a {
+    color: #94a3b8;
+    text-decoration: none;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #475569;
+    border-radius: 0.5rem;
+    background-color: #334155;
+    color: white;
+}
+
+.newsletter-form button {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid #334155;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-image {
+        grid-row: 1;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .faq-container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+    .faq-item {
+        border-bottom: 1px solid #ddd;
+        padding: 15px 0;
+        transition: all 0.3s;
+        display: none;
+    }
+    .faq-item:hover {
+        background: #f1f1f1;
+        border-radius: 8px;
+    }
+    .faq-question {
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        color: #28a745;
+        transition: color 0.3s;
+    }
+    .faq-question:hover {
+        color: #218838;
+    }
+    .faq-answer {
+        display: none;
+        margin-top: 10px;
+        font-size: 16px;
+        color: #555;
+        transition: all 0.3s ease-in-out;
+    }
+    .faq-item.active .faq-answer {
+        display: block;
+    }
+    .pagination {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .pagination button {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+        margin: 5px;
+    }
+    .pagination button:hover {
+        background-color: #218838;
+    }
+
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="auth/logo.png" alt="Logo" />
+      </div>
+      <div class="nav-links">
+        <div class="underline"></div>
+        <a href="../index.php">Home</a>
+        <!-- <a href="#">Organic Products</a> -->
+        <a href="../ecommerce/marketplace.php">Marketplace</a>
+        <!-- <a href="#">Buy Machinery</a> -->
+        <!-- <a href="#">Chat</a> -->
+        <a href="about.html"> About us</a>
+        <a href="contact1.html">Contact</a>
+        <a href="faq.html">FAQ</a>
+        <!--<a href="#">Blog</a>-->
+        <!-- <a href="#">Videos</a> -->
+        <a href="chat.html">AI Suggestions</a>
+        <!-- <a href="#">Notifications</a> -->
+        <!-- <a href="#">Expert Calls</a> -->
+      </div>
+      <div class="profile">
+        <img
+          src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg"
+          alt="Profile Picture"
+        />
+        <a href="auth/login.html">Login</a>
+      </div>
+    </nav>
+
+
+    <!-- code for faq -->
+    <div class="faq-container">
+        <h1>Frequently Asked Questions</h1>
+        
+        <div class="accordion">
+          <button class="accordion-button">What crops are best for my soil?</button>
+          <div class="panel">
+            <p>Different soil types require different crops. You can test your soil to know its pH and nutrient content, then choose crops suited for it, such as tomatoes for loamy soil or corn for sandy soil.</p>
+          </div>
+          
+          <button class="accordion-button">How do I improve soil fertility?</button>
+          <div class="panel">
+            <p>Adding organic matter like compost, using cover crops, and applying natural fertilizers can improve soil fertility over time.</p>
+          </div>
+          
+          <button class="accordion-button">What is the best time to plant vegetables?</button>
+          <div class="panel">
+            <p>The best time to plant vegetables varies based on climate. Generally, spring and early summer are ideal for many crops. You should consider your local frost dates for planting timing.</p>
+          </div>
+          
+          <button class="accordion-button">How do I protect my crops from pests?</button>
+          <div class="panel">
+            <p>Using organic pesticides, introducing beneficial insects, and planting pest-repelling herbs can help keep pests away. Regular crop rotation is also a good practice to minimize pest damage.</p>
+          </div>
+          
+          <button class="accordion-button">What is sustainable farming?</button>
+          <div class="panel">
+            <p>Sustainable farming involves using methods that protect the environment, conserve resources, and ensure long-term farm productivity. This includes organic farming, crop rotation, and reducing chemical usage.</p>
+          </div>
+        </div>
+    
+      </div>
+
+<footer style="background-color: #4c6d34; color: white; padding: 20px 0;">
+    <div class="footer-content" style="display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center;">
+        <div class="footer-section">
+            <h3 style="color: #c2a470;">AgriConnect</h3>
+            <p>Connecting Farmers, Buyers, and Experts for a Sustainable Future </p>
+            <div class="social-links">
+                <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-facebook"></i></a>
+                <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
+                <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h4 style="color: #c2a470;">Quick Links</h4>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="#" style="color: white; text-decoration: none;">Home</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;">Marketplace</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;">Blog</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4 style="color: #c2a470;">Support</h4>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="#" style="color: white; text-decoration: none;">Help Center</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;">Privacy Policy</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;">Terms of Service</a></li>
+                <li><a href="#" style="color: white; text-decoration: none;">FAQ</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom" style="text-align: center; padding-top: 10px;">
+        <p>© 2024 AgriConnect. All rights reserved. <br>
+        Developed by Krishi-Mitra </p>
+    </div>
+</footer>
+
+    <script>
+      const navLinks = document.querySelectorAll(".nav-links a");
+      const underline = document.querySelector(".underline");
+
+      function moveUnderline(e) {
+        const { left, width } = e.target.getBoundingClientRect();
+        const navLeft = document
+          .querySelector(".nav-links")
+          .getBoundingClientRect().left;
+        underline.style.width = `${width}px`;
+        underline.style.transform = `translateX(${left - navLeft}px)`;
+      }
+
+      navLinks.forEach((link) => {
+        link.addEventListener("mouseover", moveUnderline);
+      });
+
+      document
+        .querySelector(".nav-links")
+        .addEventListener("mouseleave", () => {
+          underline.style.width = "0";
+        });
+
+        const faqs = [];
+        for (let i = 1; i <= 100; i++) {
+            faqs.push({
+                question: `Question ${i}: How does this work?`,
+                answer: `Answer ${i}: This is the answer to question ${i}.`
+            });
+        }
+        const faqContainer = document.getElementById("faq-container");
+        let currentPage = 0;
+        const itemsPerPage = 15;
+        function renderFAQs() {
+            faqContainer.innerHTML = "";
+            const start = currentPage * itemsPerPage;
+            const end = start + itemsPerPage;
+            const paginatedFAQs = faqs.slice(start, end);
+            
+            paginatedFAQs.forEach(faq => {
+                const faqItem = document.createElement("div");
+                faqItem.classList.add("faq-item");
+                faqItem.innerHTML = `
+                    <div class="faq-question">${faq.question}</div>
+                    <div class="faq-answer">${faq.answer}</div>
+                `;
+                faqItem.querySelector(".faq-question").addEventListener("click", () => {
+                    faqItem.classList.toggle("active");
+                });
+                faqContainer.appendChild(faqItem);
+                faqItem.style.display = "block";
+            });
+        }
+        document.getElementById("next").addEventListener("click", () => {
+            if ((currentPage + 1) * itemsPerPage < faqs.length) {
+                currentPage++;
+                renderFAQs();
+            }
+        });
+        document.getElementById("prev").addEventListener("click", () => {
+            if (currentPage > 0) {
+                currentPage--;
+                renderFAQs();
+            }
+        });
+        renderFAQs();
+    </script>
+  </body>
+</html>

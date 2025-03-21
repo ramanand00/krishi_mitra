@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace - Fruits & Vegetables</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #28a745;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .cart {
+            float: right;
+            margin-right: 20px;
+            font-size: 18px;
+        }
+        .marketplace {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+        .product {
+            background: white;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+            width: 200px;
+        }
+        .product:hover {
+            transform: scale(1.05);
+        }
+        .product img {
+            width: 150px;
+            height: 150px;
+            border-radius: 8px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fresh Market</h1>
+        <div class="cart big-cart">
+            <span>Cart: <span id="cart-count">0</span> items</span>
+        </div>
+    </header>
+    
+    <section class="marketplace" id="product-container">
+    <div class="product">
+                <img src="img/vegetables/vegetables/1.jpg" alt=" product name 1">
+                <h2> product name 1</h2>
+                <p>$8.94 per lb</p>
+                <button onclick="addToCart(' product name 1', 8.94)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/2.jpg" alt=" product name 2">
+                <h2> product name 2</h2>
+                <p>$10.54 per lb</p>
+                <button onclick="addToCart(' product name 2', 10.54)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/3.jpg" alt=" product name 3">
+                <h2> product name 3</h2>
+                <p>$6.01 per lb</p>
+                <button onclick="addToCart(' product name 3', 6.01)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/4.jpg" alt=" product name 4">
+                <h2> product name 4</h2>
+                <p>$1.91 per lb</p>
+                <button onclick="addToCart(' product name 4', 1.91)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/5.jpg" alt=" product name 5">
+                <h2> product name 5</h2>
+                <p>$2.41 per lb</p>
+                <button onclick="addToCart(' product name 5', 2.41)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/6.jpg" alt=" product name 6">
+                <h2> product name 6</h2>
+                <p>$8.53 per lb</p>
+                <button onclick="addToCart(' product name 6', 8.53)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/7.jpg" alt=" product name 7">
+                <h2> product name 7</h2>
+                <p>$2.85 per lb</p>
+                <button onclick="addToCart(' product name 7', 2.85)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/8.jpg" alt=" product name 8">
+                <h2> product name 8</h2>
+                <p>$5.63 per lb</p>
+                <button onclick="addToCart(' product name 8', 5.63)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/9.jpg" alt=" product name 9">
+                <h2> product name 9</h2>
+                <p>$3.13 per lb</p>
+                <button onclick="addToCart(' product name 9', 3.13)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/10.jpg" alt=" product name 10">
+                <h2> product name 10</h2>
+                <p>$4.79 per lb</p>
+                <button onclick="addToCart(' product name 10', 4.79)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/11.jpg" alt=" product name 11">
+                <h2> product name 11</h2>
+                <p>$10.58 per lb</p>
+                <button onclick="addToCart(' product name 11', 10.58)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/12.jpg" alt=" product name 12">
+                <h2> product name 12</h2>
+                <p>$8.95 per lb</p>
+                <button onclick="addToCart(' product name 12', 8.95)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/13.jpg" alt=" product name 13">
+                <h2> product name 13</h2>
+                <p>$7.29 per lb</p>
+                <button onclick="addToCart(' product name 13', 7.29)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/14.jpg" alt=" product name 14">
+                <h2> product name 14</h2>
+                <p>$7.15 per lb</p>
+                <button onclick="addToCart(' product name 14', 7.15)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/15.jpg" alt=" product name 15">
+                <h2> product name 15</h2>
+                <p>$5.54 per lb</p>
+                <button onclick="addToCart(' product name 15', 5.54)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/16.jpg" alt=" product name 16">
+                <h2> product name 16</h2>
+                <p>$3.89 per lb</p>
+                <button onclick="addToCart(' product name 16', 3.89)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/17.jpg" alt=" product name 17">
+                <h2> product name 17</h2>
+                <p>$1.13 per lb</p>
+                <button onclick="addToCart(' product name 17', 1.13)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/18.jpg" alt=" product name 18">
+                <h2> product name 18</h2>
+                <p>$7.07 per lb</p>
+                <button onclick="addToCart(' product name 18', 7.07)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/19.jpg" alt=" product name 19">
+                <h2> product name 19</h2>
+                <p>$11.00 per lb</p>
+                <button onclick="addToCart(' product name 19', 11.00)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/20.jpg" alt=" product name 20">
+                <h2> product name 20</h2>
+                <p>$4.85 per lb</p>
+                <button onclick="addToCart(' product name 20', 4.85)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/21.jpg" alt=" product name 21">
+                <h2> product name 21</h2>
+                <p>$2.10 per lb</p>
+                <button onclick="addToCart(' product name 21', 2.10)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/22.jpg" alt=" product name 22">
+                <h2> product name 22</h2>
+                <p>$10.70 per lb</p>
+                <button onclick="addToCart(' product name 22', 10.70)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/23.jpg" alt=" product name 23">
+                <h2> product name 23</h2>
+                <p>$5.13 per lb</p>
+                <button onclick="addToCart(' product name 23', 5.13)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/24.jpg" alt=" product name 24">
+                <h2> product name 24</h2>
+                <p>$4.91 per lb</p>
+                <button onclick="addToCart(' product name 24', 4.91)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/25.jpg" alt=" product name 25">
+                <h2> product name 25</h2>
+                <p>$7.69 per lb</p>
+                <button onclick="addToCart(' product name 25', 7.69)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/26.jpg" alt=" product name 26">
+                <h2> product name 26</h2>
+                <p>$8.30 per lb</p>
+                <button onclick="addToCart(' product name 26', 8.30)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/27.jpg" alt=" product name 27">
+                <h2> product name 27</h2>
+                <p>$3.79 per lb</p>
+                <button onclick="addToCart(' product name 27', 3.79)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/28.jpg" alt=" product name 28">
+                <h2> product name 28</h2>
+                <p>$7.44 per lb</p>
+                <button onclick="addToCart(' product name 28', 7.44)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/29.jpg" alt=" product name 29">
+                <h2> product name 29</h2>
+                <p>$3.93 per lb</p>
+                <button onclick="addToCart(' product name 29', 3.93)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/30.jpg" alt=" product name 30">
+                <h2> product name 30</h2>
+                <p>$5.00 per lb</p>
+                <button onclick="addToCart(' product name 30', 5.00)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/31.jpg" alt=" product name 31">
+                <h2> product name 31</h2>
+                <p>$2.11 per lb</p>
+                <button onclick="addToCart(' product name 31', 2.11)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/32.jpg" alt=" product name 32">
+                <h2> product name 32</h2>
+                <p>$1.52 per lb</p>
+                <button onclick="addToCart(' product name 32', 1.52)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/33.jpg" alt=" product name 33">
+                <h2> product name 33</h2>
+                <p>$2.42 per lb</p>
+                <button onclick="addToCart(' product name 33', 2.42)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/34.jpg" alt=" product name 34">
+                <h2> product name 34</h2>
+                <p>$1.69 per lb</p>
+                <button onclick="addToCart(' product name 34', 1.69)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/35.jpg" alt=" product name 35">
+                <h2> product name 35</h2>
+                <p>$3.84 per lb</p>
+                <button onclick="addToCart(' product name 35', 3.84)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/36.jpg" alt=" product name 36">
+                <h2> product name 36</h2>
+                <p>$5.73 per lb</p>
+                <button onclick="addToCart(' product name 36', 5.73)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/37.jpg" alt=" product name 37">
+                <h2> product name 37</h2>
+                <p>$9.54 per lb</p>
+                <button onclick="addToCart(' product name 37', 9.54)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/38.jpg" alt=" product name 38">
+                <h2> product name 38</h2>
+                <p>$1.44 per lb</p>
+                <button onclick="addToCart(' product name 38', 1.44)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/39.jpg" alt=" product name 39">
+                <h2> product name 39</h2>
+                <p>$6.18 per lb</p>
+                <button onclick="addToCart(' product name 39', 6.18)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/40.jpg" alt=" product name 40">
+                <h2> product name 40</h2>
+                <p>$3.40 per lb</p>
+                <button onclick="addToCart(' product name 40', 3.40)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/41.jpg" alt=" product name 41">
+                <h2> product name 41</h2>
+                <p>$1.95 per lb</p>
+                <button onclick="addToCart(' product name 41', 1.95)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/42.jpg" alt=" product name 42">
+                <h2> product name 42</h2>
+                <p>$6.79 per lb</p>
+                <button onclick="addToCart(' product name 42', 6.79)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/43.jpg" alt=" product name 43">
+                <h2> product name 43</h2>
+                <p>$3.22 per lb</p>
+                <button onclick="addToCart(' product name 43', 3.22)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/44.jpg" alt=" product name 44">
+                <h2> product name 44</h2>
+                <p>$3.97 per lb</p>
+                <button onclick="addToCart(' product name 44', 3.97)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/45.jpg" alt=" product name 45">
+                <h2> product name 45</h2>
+                <p>$8.39 per lb</p>
+                <button onclick="addToCart(' product name 45', 8.39)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/46.jpg" alt=" product name 46">
+                <h2> product name 46</h2>
+                <p>$3.65 per lb</p>
+                <button onclick="addToCart(' product name 46', 3.65)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/47.jpg" alt=" product name 47">
+                <h2> product name 47</h2>
+                <p>$1.44 per lb</p>
+                <button onclick="addToCart(' product name 47', 1.44)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/48.jpg" alt=" product name 48">
+                <h2> product name 48</h2>
+                <p>$8.22 per lb</p>
+                <button onclick="addToCart(' product name 48', 8.22)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/49.jpg" alt=" product name 49">
+                <h2> product name 49</h2>
+                <p>$4.81 per lb</p>
+                <button onclick="addToCart(' product name 49', 4.81)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/50.jpg" alt=" product name 50">
+                <h2> product name 50</h2>
+                <p>$7.05 per lb</p>
+                <button onclick="addToCart(' product name 50', 7.05)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/51.jpg" alt=" product name 51">
+                <h2> product name 51</h2>
+                <p>$1.69 per lb</p>
+                <button onclick="addToCart(' product name 51', 1.69)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/52.jpg" alt=" product name 52">
+                <h2> product name 52</h2>
+                <p>$1.59 per lb</p>
+                <button onclick="addToCart(' product name 52', 1.59)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/53.jpg" alt=" product name 53">
+                <h2> product name 53</h2>
+                <p>$4.51 per lb</p>
+                <button onclick="addToCart(' product name 53', 4.51)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/54.jpg" alt=" product name 54">
+                <h2> product name 54</h2>
+                <p>$3.69 per lb</p>
+                <button onclick="addToCart(' product name 54', 3.69)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/55.jpg" alt=" product name 55">
+                <h2> product name 55</h2>
+                <p>$9.55 per lb</p>
+                <button onclick="addToCart(' product name 55', 9.55)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/56.jpg" alt=" product name 56">
+                <h2> product name 56</h2>
+                <p>$5.23 per lb</p>
+                <button onclick="addToCart(' product name 56', 5.23)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/57.jpg" alt=" product name 57">
+                <h2> product name 57</h2>
+                <p>$4.40 per lb</p>
+                <button onclick="addToCart(' product name 57', 4.40)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/58.jpg" alt=" product name 58">
+                <h2> product name 58</h2>
+                <p>$9.41 per lb</p>
+                <button onclick="addToCart(' product name 58', 9.41)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/59.jpg" alt=" product name 59">
+                <h2> product name 59</h2>
+                <p>$4.59 per lb</p>
+                <button onclick="addToCart(' product name 59', 4.59)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/60.jpg" alt=" product name 60">
+                <h2> product name 60</h2>
+                <p>$3.55 per lb</p>
+                <button onclick="addToCart(' product name 60', 3.55)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/61.jpg" alt=" product name 61">
+                <h2> product name 61</h2>
+                <p>$2.69 per lb</p>
+                <button onclick="addToCart(' product name 61', 2.69)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/62.jpg" alt=" product name 62">
+                <h2> product name 62</h2>
+                <p>$3.91 per lb</p>
+                <button onclick="addToCart(' product name 62', 3.91)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/63.jpg" alt=" product name 63">
+                <h2> product name 63</h2>
+                <p>$3.38 per lb</p>
+                <button onclick="addToCart(' product name 63', 3.38)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/64.jpg" alt=" product name 64">
+                <h2> product name 64</h2>
+                <p>$5.40 per lb</p>
+                <button onclick="addToCart(' product name 64', 5.40)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/65.jpg" alt=" product name 65">
+                <h2> product name 65</h2>
+                <p>$7.92 per lb</p>
+                <button onclick="addToCart(' product name 65', 7.92)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/66.jpg" alt=" product name 66">
+                <h2> product name 66</h2>
+                <p>$2.12 per lb</p>
+                <button onclick="addToCart(' product name 66', 2.12)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/67.jpg" alt=" product name 67">
+                <h2> product name 67</h2>
+                <p>$2.11 per lb</p>
+                <button onclick="addToCart(' product name 67', 2.11)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/68.jpg" alt=" product name 68">
+                <h2> product name 68</h2>
+                <p>$4.38 per lb</p>
+                <button onclick="addToCart(' product name 68', 4.38)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/69.jpg" alt=" product name 69">
+                <h2> product name 69</h2>
+                <p>$1.60 per lb</p>
+                <button onclick="addToCart(' product name 69', 1.60)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/70.jpg" alt=" product name 70">
+                <h2> product name 70</h2>
+                <p>$6.32 per lb</p>
+                <button onclick="addToCart(' product name 70', 6.32)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/71.jpg" alt=" product name 71">
+                <h2> product name 71</h2>
+                <p>$7.89 per lb</p>
+                <button onclick="addToCart(' product name 71', 7.89)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/72.jpg" alt=" product name 72">
+                <h2> product name 72</h2>
+                <p>$7.89 per lb</p>
+                <button onclick="addToCart(' product name 72', 7.89)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/73.jpg" alt=" product name 73">
+                <h2> product name 73</h2>
+                <p>$4.77 per lb</p>
+                <button onclick="addToCart(' product name 73', 4.77)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/74.jpg" alt=" product name 74">
+                <h2> product name 74</h2>
+                <p>$10.91 per lb</p>
+                <button onclick="addToCart(' product name 74', 10.91)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/75.jpg" alt=" product name 75">
+                <h2> product name 75</h2>
+                <p>$3.13 per lb</p>
+                <button onclick="addToCart(' product name 75', 3.13)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/76.jpg" alt=" product name 76">
+                <h2> product name 76</h2>
+                <p>$6.10 per lb</p>
+                <button onclick="addToCart(' product name 76', 6.10)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/77.jpg" alt=" product name 77">
+                <h2> product name 77</h2>
+                <p>$3.42 per lb</p>
+                <button onclick="addToCart(' product name 77', 3.42)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/78.jpg" alt=" product name 78">
+                <h2> product name 78</h2>
+                <p>$10.41 per lb</p>
+                <button onclick="addToCart(' product name 78', 10.41)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/79.jpg" alt=" product name 79">
+                <h2> product name 79</h2>
+                <p>$8.62 per lb</p>
+                <button onclick="addToCart(' product name 79', 8.62)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/80.jpg" alt=" product name 80">
+                <h2> product name 80</h2>
+                <p>$1.83 per lb</p>
+                <button onclick="addToCart(' product name 80', 1.83)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/81.jpg" alt=" product name 81">
+                <h2> product name 81</h2>
+                <p>$8.08 per lb</p>
+                <button onclick="addToCart(' product name 81', 8.08)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/82.jpg" alt=" product name 82">
+                <h2> product name 82</h2>
+                <p>$3.12 per lb</p>
+                <button onclick="addToCart(' product name 82', 3.12)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/83.jpg" alt=" product name 83">
+                <h2> product name 83</h2>
+                <p>$6.56 per lb</p>
+                <button onclick="addToCart(' product name 83', 6.56)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/84.jpg" alt=" product name 84">
+                <h2> product name 84</h2>
+                <p>$6.08 per lb</p>
+                <button onclick="addToCart(' product name 84', 6.08)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/85.jpg" alt=" product name 85">
+                <h2> product name 85</h2>
+                <p>$10.82 per lb</p>
+                <button onclick="addToCart(' product name 85', 10.82)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/86.jpg" alt=" product name 86">
+                <h2> product name 86</h2>
+                <p>$5.51 per lb</p>
+                <button onclick="addToCart(' product name 86', 5.51)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/87.jpg" alt=" product name 87">
+                <h2> product name 87</h2>
+                <p>$3.70 per lb</p>
+                <button onclick="addToCart(' product name 87', 3.70)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/88.jpg" alt=" product name 88">
+                <h2> product name 88</h2>
+                <p>$8.77 per lb</p>
+                <button onclick="addToCart(' product name 88', 8.77)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/89.jpg" alt=" product name 89">
+                <h2> product name 89</h2>
+                <p>$4.52 per lb</p>
+                <button onclick="addToCart(' product name 89', 4.52)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/90.jpg" alt=" product name 90">
+                <h2> product name 90</h2>
+                <p>$8.18 per lb</p>
+                <button onclick="addToCart(' product name 90', 8.18)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/91.jpg" alt=" product name 91">
+                <h2> product name 91</h2>
+                <p>$5.30 per lb</p>
+                <button onclick="addToCart(' product name 91', 5.30)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/92.jpg" alt=" product name 92">
+                <h2> product name 92</h2>
+                <p>$9.13 per lb</p>
+                <button onclick="addToCart(' product name 92', 9.13)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/93.jpg" alt=" product name 93">
+                <h2> product name 93</h2>
+                <p>$4.45 per lb</p>
+                <button onclick="addToCart(' product name 93', 4.45)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/94.jpg" alt=" product name 94">
+                <h2> product name 94</h2>
+                <p>$10.86 per lb</p>
+                <button onclick="addToCart(' product name 94', 10.86)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/95.jpg" alt=" product name 95">
+                <h2> product name 95</h2>
+                <p>$2.54 per lb</p>
+                <button onclick="addToCart(' product name 95', 2.54)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/96.jpg" alt=" product name 96">
+                <h2> product name 96</h2>
+                <p>$4.64 per lb</p>
+                <button onclick="addToCart(' product name 96', 4.64)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/97.jpg" alt=" product name 97">
+                <h2> product name 97</h2>
+                <p>$10.02 per lb</p>
+                <button onclick="addToCart(' product name 97', 10.02)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/98.jpg" alt=" product name 98">
+                <h2> product name 98</h2>
+                <p>$3.88 per lb</p>
+                <button onclick="addToCart(' product name 98', 3.88)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/99.jpg" alt=" product name 99">
+                <h2> product name 99</h2>
+                <p>$5.67 per lb</p>
+                <button onclick="addToCart(' product name 99', 5.67)">Add to Cart</button>
+            </div><div class="product">
+                <img src="img/vegetables/vegetables/10.jpg0" alt=" product name 100">
+                <h2> product name 100</h2>
+                <p>$4.68 per lb</p>
+                <button onclick="addToCart(' product name 100', 4.68)">Add to Cart</button>
+            </div></section>
+    
+    <script>
+        let cartCount = 0;
+        function addToCart(name, price) {
+            cartCount++;
+            document.getElementById('cart-count').innerText = cartCount;
+            alert(name + ' added to cart!');
+        }
+        
+        const products = [];
+        for (let i = 1; i <= 100; i++) {
+            products.push({
+                name: ` product name ${i}`,
+                price: (Math.random() * 10 + 1).toFixed(2),
+                img: `img/vegetables/vegetables/${.jpgi}`
+            });
+        }
+        
+        const container = document.getElementById('product-container');
+        products.forEach((product, index) => {
+            const productElement = document.createElement('div');
+            productElement.classList.add('product');
+            productElement.innerHTML = `
+                <img src="${product.img}" alt="${product.name}">
+                <h2>${product.name}</h2>
+                <p>$${product.price} per lb</p>
+                <button onclick="addToCart('${product.name}', ${product.price})">Add to Cart</button>
+            `;
+            container.appendChild(productElement);
+            
+            if (index === 50) {
+                const smallCart = document.createElement('div');
+                smallCart.classList.add('cart');
+                smallCart.innerHTML = `<span>Cart: <span id="cart-count-small">0</span> items</span>`;
+                document.body.appendChild(smallCart);
+            }
+        });
+    </script><div class="cart"><span>Cart: <span id="cart-count-small">0</span> items</span></div>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body>
+</html>
