@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content="0;url=index.php"> 
+    <script>
+        // Optional JavaScript redirection
+        setTimeout(function() {
+            window.location.href = "index.php";
+        }, 0); 
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+        a {
+            color: #0077cc;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .redirect-link {
+            font-weight: bold;
+            text-decoration: none;
+            color: #0077cc;
+            transition: color 0.3s ease;
+        }
+        .redirect-link:hover {
+            color: #005599;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        @media (max-width: 600px) {
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <p>If you are not redirected automatically, <br> <a class="redirect-link" href="index.php">click here</a>.</p>
+</body>
+</html>
